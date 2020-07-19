@@ -7,7 +7,7 @@ spec:
   selector:  #to know what set of pods it is supposed to be providing a service to
     component: web
   ports:
-    - port: 3000 # port on the target pod we are providing access to
+    - port: 3000 # port on the target pod we are providing access to, literally what we put in the code of react
       targetPort: 3000 # how other pods will access the pod we are governing this could be a totally differnet number but there is no reason it shouldn't bde the same as targetPort
 
 
