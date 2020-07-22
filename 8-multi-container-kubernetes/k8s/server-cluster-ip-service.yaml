@@ -7,5 +7,5 @@ spec:
   selector:
     component: server
   ports:
-    - port: 5000 # what we put in the code to listen to, in node js.
+    - port: 5000
       targetPort: 5000
