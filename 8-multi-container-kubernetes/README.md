@@ -14,3 +14,5 @@
 - to see all is good
 ```k get deployments```
 ```k get pods```
+
+- the worker doesn't need a port assigned to it cuz no1 should be able to access it
