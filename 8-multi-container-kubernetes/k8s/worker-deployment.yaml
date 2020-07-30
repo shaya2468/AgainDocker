@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: stephengrider/multi-worker
+          image: shayaajz/multi-worker
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service # the name of the string in the file redis-cluster-ip-service.yaml (line 4)
