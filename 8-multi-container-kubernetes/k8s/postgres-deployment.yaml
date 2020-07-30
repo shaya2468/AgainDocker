@@ -26,8 +26,8 @@ spec:
               mountPath: /var/lib/postgresql/data # where in the container should it be available. same idea like the docker volume. This path is the standard in postgres
               subPath: postgres # the name of the folder INSIDE the volume itself. something that is only mandatory in postgres. for whatever reason he won't let it just be the default.
           env:
-            - name: PGPASSWORD
+            - name: POSTGRES_PASSWORD # this is a feature specifically of postgress
               valueFrom:
-                secretKeyRef:
+                secretKeyRef: # these were passed from server-deployment.yaml
                   name: pgpassword
                   key: PGPASSWORD

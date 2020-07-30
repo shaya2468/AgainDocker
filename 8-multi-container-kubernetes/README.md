@@ -35,4 +35,11 @@
 - ```k get pvc``` all the persitent volumes CLAIMS - "you can get this thing if you want to, advertisement"
 - ```k get pv``` all the persitent volumes - "an actual instance of the claim"
  
- 
+## Secrets
+- Securely store a piece of information in the cluster, such as a database password
+- you can't use a config file because that defeats the purpose, so we use the imperative approuch.
+![image](https://user-images.githubusercontent.com/8313826/88887308-d1577400-d244-11ea-86d8-1369787c2619.png)
+
+- type of secret is generic. there are 2 others, docker-registry and the other is tls is for http setup. in our case we arne' using a docker registry just docker hub.
+```k create secret generic pgpassword --from-literal PGPASSWORD=123abc```
+```k get secrets```

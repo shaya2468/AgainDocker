@@ -30,8 +30,8 @@ spec:
               value: '5432'
             - name: PGDATABASE
               value: postgres
-            - name: PGPASSWORD
-              valueFrom:
-                secretKeyRef:
+            - name: PGPASSWORD # our copy of our multi-server image will be looking for this PGPASSWORD
+              valueFrom: # what is going to happen is that the environment vairable called PGPASSWORD for the multi-server will be taken from the secret PGPASSWORD
+                secretKeyRef: # taken from k create secret generic pgpassword --from-literal PGPASSWORD=123abc
                   name: pgpassword
-                  key: PGPASSWORD
+                  key: PGPASSWORD # it's confusing that the name of the environment variable above, and the key from the secret in this line are the same. We could call it shaya_password and just change the command above to shaya_password=123abc
