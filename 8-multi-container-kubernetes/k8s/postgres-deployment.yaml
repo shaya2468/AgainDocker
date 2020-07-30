@@ -12,22 +12,22 @@ spec:
       labels:
         component: postgres
     spec:
-#      volumes:
-#        - name: postgres-storage
-#          persistentVolumeClaim:
-#            claimName: database-persistent-volume-claim
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: database-persistent-volume-claim # the metadata of database-persistent-volume-claim.yaml
       containers:
         - name: postgres
           image: postgres
           ports:
             - containerPort: 5432 # default port for postgress
-#          volumeMounts:
-#            - name: postgres-storage
-#              mountPath: /var/lib/postgresql/data
-#              subPath: postgres
-#          env:
-#            - name: PGPASSWORD
-#              valueFrom:
-#                secretKeyRef:
-#                  name: pgpassword
-#                  key: PGPASSWORD
+          volumeMounts:
+            - name: postgres-storage # what we defined in spec-> volumes a couple of lines above me
+              mountPath: /var/lib/postgresql/data # where in the container should it be available. same idea like the docker volume. This path is the standard in postgres
+              subPath: postgres # the name of the folder INSIDE the volume itself. something that is only mandatory in postgres. for whatever reason he won't let it just be the default.
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword
+                  key: PGPASSWORD
