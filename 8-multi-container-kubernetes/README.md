@@ -68,3 +68,5 @@
 
 - "Creating the ingress configuration" : important lesson that shows the ingress-service.yaml for locally
 
+- execute ```k apply -f k8s/``` and enter localhost
+
