@@ -43,3 +43,28 @@
 - type of secret is generic. there are 2 others, docker-registry and the other is tls is for http setup. in our case we arne' using a docker registry just docker hub.
 ```k create secret generic pgpassword --from-literal PGPASSWORD=123abc```
 ```k get secrets```
+
+## Ingress
+
+- we could use our own nginx but were using ingress-nginx because it's suited for kubernetes
+
+- Optional reading about ingress nginx - https://www.joyfulbikeshedding.com/blog/2018-03-26-studying-the-kubernetes-ingress-system.html
+
+- installation guide here - https://kubernetes.github.io/ingress-nginx/deploy/
+
+```kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/cloud/deploy.yaml```
+
+```kubectl get pods -n ingress-nginx```
+
+- When we do it for google, we'll do what it says on the website for GKE
+
+![image](https://user-images.githubusercontent.com/8313826/88895170-619bb600-d251-11ea-8308-f9b6ce8f39a7.png)
+
+![image](https://user-images.githubusercontent.com/8313826/88896001-e8509300-d251-11ea-86f3-05fab8b353ce.png)
+
+- we are going to implement this rule set:
+
+![image](https://user-images.githubusercontent.com/8313826/88897834-9b21f080-d254-11ea-9d52-d6ea69298ec7.png)
+
+- "Creating the ingress configuration" : important lesson that shows the ingress-service.yaml for locally
+
