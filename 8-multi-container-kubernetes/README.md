@@ -19,13 +19,13 @@
 
 ![Screen Shot 2020-07-23 at 9 07 57](https://user-images.githubusercontent.com/8313826/88256447-06ebe280-ccc4-11ea-8040-6ad35c7bd899.png)
 
-##Volumes
+## Volumes
  - We need to seperate between the postress pod, and where the data is stored, this problem introduces VOLUMES.
  - Kubernetes volumes is not like docker volumes and there are some distinctions
  - Volume lives with a pod, when the pod dies it dies with it. it lives over container crashes, not pod crashes
  - Persistent Volume is not tied to any specific pod
  
-##Persistent volume claim
+## Persistent volume claim
 - It lists the storage options(500gb , 1 tb) and you assign it to a pod
 - statically provisioned - A volume that is created ahead of time
 - dynamically provisioned - A volume that is created on the fly
