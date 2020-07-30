@@ -19,9 +19,9 @@ spec:
             - containerPort: 5000
           env:
             - name: REDIS_HOST
-              value: redis-cluster-ip-service
+              value: redis-cluster-ip-service # the name of the string in the file redis-cluster-ip-service.yaml (line 4)
             - name: REDIS_PORT
-              value: '6379'
+              value: '6379' # the port that is exposed from the service redis-cluster-ip-service.yaml
             - name: PGUSER
               value: postgres
             - name: PGHOST

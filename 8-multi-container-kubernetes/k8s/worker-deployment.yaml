@@ -15,8 +15,8 @@ spec:
       containers:
         - name: worker
           image: stephengrider/multi-worker
-#          env:
-#            - name: REDIS_HOST
-#              value: redis-cluster-ip-service
-#            - name: REDIS_PORT
-#              value: '6379'
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service # the name of the string in the file redis-cluster-ip-service.yaml (line 4)
+            - name: REDIS_PORT
+              value: '6379' # the port that is exposed from the service redis-cluster-ip-service.yaml
